@@ -14,6 +14,11 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
   test "should get new" do
     get new_product_url
     assert_response :success
+    assert_select 'h1', 'New product'
+    assert_select 'nav a', minimum: 4
+    assert_select 'div>label+input', 3
+    assert_select 'div>label+textarea', 1
+    assert_select "input[value='Create Product']"
   end
 
   test 'should create product' do
