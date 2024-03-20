@@ -18,7 +18,7 @@ class ProductsController < ApplicationController
   def edit; end
 
   # POST /products or /products.json
-  def create
+  def create # rubocop:disable Metrics/AbcSize
     @product = Product.new(product_params)
     respond_to do |format|
       if @product.save
