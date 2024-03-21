@@ -12,6 +12,15 @@ module.exports = {
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },
+      keyframes: {
+        colorshift: {
+          '0%': { background: '#8f8' },
+          '100%': { background:'none' }
+        }
+      },
+      animation: {
+        'fadein': 'colorshift 1s'
+      }
     },
   },
   plugins: [
